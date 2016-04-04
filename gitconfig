@@ -3,3 +3,8 @@
 # Please adapt and uncomment the following lines:
 #	name = Laurie Young
 #	email = laurie@wildfalcon.com
+[user]
+	name = Laurie Young
+	email = laurie@wildfalcon.com
+[alias]
+	co = checkout
