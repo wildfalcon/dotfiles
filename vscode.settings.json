@@ -1,0 +1,18 @@
+{
+    "files.autoSave": "onFocusChange",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+
+	"ruby.lint": {
+		"reek": true,
+		"rubocop": true,
+		"ruby": true, 
+		"fasterer": true,
+		"debride": true,
+		"ruby-lint": true
+	},
+
+	"ruby.lintDebounceTime": 500,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false
+}
