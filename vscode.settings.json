@@ -4,7 +4,7 @@
     "git.autofetch": true,
 
 	"ruby.lint": {
-		"reek": true,
+		"reek": false,
 		"rubocop": true,
 		"ruby": true, 
 		"fasterer": true,
