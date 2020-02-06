@@ -1,4 +1,3 @@
-
 alias gst='git status'
 
 source ~/.git-completion.bash
