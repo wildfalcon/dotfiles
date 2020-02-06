@@ -7,3 +7,6 @@ alias la='ls -lA'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Remove ruby warnings
+export RUBYOPT='-W:no-deprecated -W:no-experimental'
