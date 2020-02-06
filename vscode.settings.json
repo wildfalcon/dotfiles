@@ -14,5 +14,10 @@
 
 	"ruby.lintDebounceTime": 500,
 	"editor.tabSize": 2,
-	"editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "workbench.colorTheme": "Monokai Dimmed",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "diffEditor.ignoreTrimWhitespace": false
 }
