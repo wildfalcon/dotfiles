@@ -18,5 +18,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.statusBar.visible": true,
+  "zenMode.hideLineNumbers": false
 }
