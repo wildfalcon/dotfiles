@@ -22,3 +22,7 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+
+# Set up custom paths
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
