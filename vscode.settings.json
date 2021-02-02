@@ -14,7 +14,7 @@
 	"ruby.lintDebounceTime": 500,
 	"editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.colorTheme": "Visual Studio 2019 Dark",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -23,5 +23,5 @@
   "zenMode.hideLineNumbers": false,
   "editor.minimap.enabled": false,
   "git.suggestSmartCommit": false,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 1
 }
