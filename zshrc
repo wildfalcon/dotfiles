@@ -17,6 +17,9 @@ eval "$(rbenv init -)"
 export RUBYOPT='-W:no-deprecated -W:no-experimental' # No warnings
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
+# Fix NSCFConstantString initialize error
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # Set up homebrew completions
 # if type brew &>/dev/null; then
 #   HOMEBREW_PREFIX="$(brew --prefix)"
