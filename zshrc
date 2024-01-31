@@ -35,6 +35,8 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Set up custom paths
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+
 
 # Set up prompts
 #source ~/.git-completion.bash
