@@ -37,6 +37,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
+# set up Anaconda 
+export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+
+
+# Set up editor
+export EDITOR="vim"
 
 # Set up prompts
 #source ~/.git-completion.bash
@@ -51,9 +57,12 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
+# Load asdf
+. "$HOME/.asdf/asdf.sh"
 
 # Load completions
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
+fpath=(${ASDF_DIR}/completions $fpath) # load ADSF competions
 
 autoload -Uz compinit && compinit
