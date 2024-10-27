@@ -1,0 +1,81 @@
+# Use C-s as prefix
+unbind C-b
+set -g prefix C-s
+
+# Turn mouse on (allows focusing in a pane)
+set -g mouse on
+
+# Allow easy tmux config reloading
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+#bind-key -r C-s send-prefix
+
+# Set default terminal
+set-option -g default-terminal "screen-256color"
+
+# Use emacs bindings on read
+set-option -g status-keys "emacs"
+
+# Configure the status bar
+set-option -g status-bg '#666666'
+set-option -g status-fg '#dddddd'
+set-option -g status-left-length 50
+
+# set the staus bar with utilities
+# to install the utilities use
+# npm install -g is-online-cli
+# brew tap Goles/battery
+# brew install battery
+set-option -g status-right "#(battery -t) #(is-online) #(date '+%a, %b %d - %I:%M') "
+
+# Improved bindings for adding panes
+bind-key - split-window -v  -c '#{pane_current_path}'
+bind-key \\ split-window -h  -c '#{pane_current_path}'
+
+# Pane resizing made easy
+# Fine adjustment (1 or 2 cursor cells per bump)
+bind -n S-Left resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down resize-pane -D 1
+bind -n S-Up resize-pane -U 1
+
+# Coarse adjustment (5 or 10 cursor cells per bump)
+# DISABLED becuase it conflicts with OS X change workspace
+# bind -n C-Left resize-pane -L 10
+# bind -n C-Right resize-pane -R 10
+# bind -n C-Down resize-pane -D 5
+# bind -n C-Up resize-pane -U 5
+
+# Window navigation
+bind c new-window -c "#{pane_current_path}"
+set -g base-index 1
+set -g renumber-windows on
+bind-key b break-pane -d
+
+# Session navigation
+bind-key C-j choose-tree
+
+# Set up copy and paste config
+# requires reattach-to-user-namespace
+# brew install reattach-to-user-namespace
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi 'v' send-keys -X begin-selection
+bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# smart pane switching with awareness of vim split
+unbind-key -n C-\\
+bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
+bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
+bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
+bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
+bind -n C-\\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
+
+# Personal workdlow commands
+bind-key t split-window -h "vim ~/Dropbox/quick-notes.md"
+bind-key h split-window -h "htop"
