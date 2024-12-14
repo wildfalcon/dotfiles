@@ -13,6 +13,8 @@ eval "$(rbenv init -)"
 export RUBYOPT='-W:no-deprecated -W:no-experimental' # No warnings
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
+# Set up Exlixir
+export ERL_AFLAGS="-kernel shell_history enabled" #iex shell history
 
 
 # Fix NSCFConstantString initialize error
