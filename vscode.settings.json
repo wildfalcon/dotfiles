@@ -26,5 +26,11 @@
   "window.zoomLevel": 1,
   "github.copilot.editor.enableAutoCompletions": true,
   "terminal.integrated.inheritEnv": false,
-  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace"
+  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "[python]": {
+    
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off"
+  }
 }
