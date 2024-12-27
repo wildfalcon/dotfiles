@@ -43,6 +43,12 @@
     "*.heex": "phoenix-heex"
   },
 
+  "emmet.includeLanguages": {
+    "elixir": "html",
+    "phoenix-heex": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
   "[elixir]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "JakeBecker.elixir-ls"
